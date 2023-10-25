@@ -4,6 +4,7 @@ import numpy as np
 import random
 import urllib.request
 import multiprocessing
+import matplotlib.pyplot as plt
 from zipfile import ZipFile
 from io import BytesIO
 from torchvision import datasets
@@ -123,3 +124,13 @@ def compute_mean_and_std():
     torch.save({"mean": mean, "std": std}, cache_file)
 
     return mean, std
+
+
+def after_subplot(ax: plt.Axes, group_name: str, x_label: str):
+    """Add title xlabel and legend to single chart"""
+    ax.set_title(group_name)
+    ax.set_xlabel(x_label)
+    ax.legend(loc="center right")
+
+    if group_name.lower() == "loss":
+        ax.set_ylim([None, 4.5])
