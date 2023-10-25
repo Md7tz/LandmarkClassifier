@@ -30,7 +30,7 @@ def setup_env():
     # Download data if not present already
     # TODO
     download_and_extract()
-    compute_meant_and_std()
+    compute_mean_and_std()
 
     # Make checkpoints subdir if not existing
     os.makedirs("checkpoints", exist_ok=True)
@@ -79,7 +79,7 @@ def download_and_extract(
 
 
 # Compute image normalization
-def compute_meant_and_std():
+def compute_mean_and_std():
     """
     Compute per-channel mean and std of the dataset (to be used in transforms.Normalize())
     """
@@ -115,7 +115,7 @@ def compute_meant_and_std():
     for images, _ in tqdm(iterable=dl, desc="Computing std", total=len(ds), ncols=80):
         batch_samples = images.size(0)
         images = images.view(batch_samples, images.size(1), -1)
-        var += ((images - mean.unsqeeze(1)) ** 2).sum([0, 2])
+        var += ((images - mean.unsqueeze(1)) ** 2).sum([0, 2])
         npix += images.nelement()
     std = torch.sqrt(var / (npix / 3))
 
