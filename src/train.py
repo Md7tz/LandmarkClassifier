@@ -1,6 +1,7 @@
 import tempfile
 import torch
 import torch.nn as nn
+import mlflow
 import numpy as np
 from tqdm import tqdm
 from livelossplot import PlotLosses
@@ -119,9 +120,26 @@ def optimize(
         optimizer=optimizer, mode="min"
     )
 
+    # mlflow.set_tracking_uri("http://localhost:5000")
     for epoch in range(1, n_epochs + 1):
         train_loss = train_one_epoch(data_loaders["train"], model, optimizer, loss)
         valid_loss = valid_one_epoch(data_loaders["valid"], model, loss)
+
+        # with mlflow.start_run():
+        # # Log the current epoch as a parameter
+        # mlflow.log_param("epoch", epoch)
+        # # batch size
+        # mlflow.log_param("batch_size", data_loaders["train"].batch_size)
+        # # optimizer name sgd/adam
+        # mlflow.log_param("optimizer", optimizer.__class__.__name__)
+        # # loss function name
+        # mlflow.log_param("loss_function", loss.__class__.__name__)
+
+        # # Log training and validation loss as metrics
+        # mlflow.log_metric("train_loss", train_loss)
+        # mlflow.log_metric("valid_loss", valid_loss)
+        # mlflow.log_metric("lr", optimizer.param_groups[0]["lr"])
+        # mlflow.log_metric("weight_decay", optimizer.param_groups[0]["weight_decay"])
 
         # Print training/validation statistics
         print(
@@ -137,6 +155,7 @@ def optimize(
             print(
                 f"Validation loss decreased ({valid_loss_min:.6f} --> {valid_loss:.6f}).  Saving model ..."
             )
+            # mlflow.pytorch.log_model(model, "model")
 
         # Update learning rate, i.e. reduce it if validation loss has not improved
         scheduler.step(valid_loss)
@@ -189,7 +208,9 @@ def one_epoch_test(test_data_loader, model: nn.Module, loss) -> float:
             _, pred = torch.max(logits, 1)
 
             # Compare predictions to true label
-            correct += torch.sum(torch.squeeze(pred.eq(target.data.view_as(pred))).cpu())
+            correct += torch.sum(
+                torch.squeeze(pred.eq(target.data.view_as(pred))).cpu()
+            )
             total += data.size(0)
 
     print("Test Loss: {:.6f}\n".format(test_loss))

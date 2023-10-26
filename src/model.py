@@ -4,6 +4,54 @@ import torch.nn as nn
 
 # define the CNN Architecture
 class MyModel(nn.Module):
+    # def __init__(self, n_classes: int = 1000, dropout: float = 0.7) -> None:
+    #     super(MyModel, self).__init__()
+
+    #     # Convolutional layers
+    #     self.conv1 = nn.Sequential(
+    #         nn.Conv2d(
+    #             in_channels=3, out_channels=16, kernel_size=3, padding=1
+    #         ),  # match the feature map size with the input size
+    #         nn.LeakyReLU(negative_slope=0.2),
+    #         nn.MaxPool2d(2, 2),
+    #     )
+
+    #     self.conv2 = nn.Sequential(
+    #         nn.Conv2d(16, 32, 3, padding=1),
+    #         nn.LeakyReLU(negative_slope=0.2),
+    #         nn.MaxPool2d(2, 2),
+    #     )
+
+    #     self.conv3 = nn.Sequential(
+    #         nn.Conv2d(32, 64, 3, padding=1),
+    #         nn.LeakyReLU(negative_slope=0.2),
+    #         nn.MaxPool2d(2, 2),
+    #     )
+
+    #     # Fully connected layers (after 3 maxpools: 224 -> 28)
+    #     self.classifier = nn.Sequential(
+    #         nn.Dropout(dropout),
+    #         nn.Linear(64 * 28 * 28, 256),
+    #         nn.LeakyReLU(negative_slope=0.2),
+    #         nn.BatchNorm1d(256),
+    #         nn.Dropout(dropout),
+    #         nn.Linear(256, n_classes),
+    #     )
+
+    #     # Batch normalization
+    #     self.batch_norm2d = nn.BatchNorm2d(32)
+
+    # def forward(self, x: torch.Tensor) -> torch.Tensor:
+    #     ## Define forward behavior
+    #     x = self.conv1(x)
+    #     x = self.conv2(x)
+    #     x = self.batch_norm2d(x)
+    #     x = self.conv3(x)
+
+    #     x = x.view(-1, 64 * 28 * 28)
+    #     x = self.classifier(x)
+
+    #     return x
     def __init__(self, n_classes: int = 1000, dropout: float = 0.7) -> None:
         super(MyModel, self).__init__()
 
@@ -28,10 +76,16 @@ class MyModel(nn.Module):
             nn.MaxPool2d(2, 2),
         )
 
-        # Fully connected layers (after 3 maxpools: 224 -> 28)
+        self.conv4 = nn.Sequential(
+            nn.Conv2d(64, 128, 3, padding=1),
+            nn.LeakyReLU(negative_slope=0.2),
+            nn.MaxPool2d(2, 2),
+        )
+        self._flatten_size = 128 * 14 * 14
+        # Fully connected layers (after 4 maxpools: 224 -> 14)
         self.classifier = nn.Sequential(
             nn.Dropout(dropout),
-            nn.Linear(64 * 28 * 28, 256),
+            nn.Linear(self._flatten_size, 256),
             nn.LeakyReLU(negative_slope=0.2),
             nn.BatchNorm1d(256),
             nn.Dropout(dropout),
@@ -47,8 +101,9 @@ class MyModel(nn.Module):
         x = self.conv2(x)
         x = self.batch_norm2d(x)
         x = self.conv3(x)
+        x = self.conv4(x)
 
-        x = x.view(-1, 64 * 28 * 28)
+        x = x.view(-1, self._flatten_size)
         x = self.classifier(x)
 
         return x
