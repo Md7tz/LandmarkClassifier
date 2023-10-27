@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/a0eb07c5582142afb13b7f28b67af0fa/artifacts
+end_time: 1698366024103
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: a0eb07c5582142afb13b7f28b67af0fa
+run_name: marvelous-cow-338
+run_uuid: a0eb07c5582142afb13b7f28b67af0fa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698366023378
+status: 3
+tags: []
+user_id: Medhat

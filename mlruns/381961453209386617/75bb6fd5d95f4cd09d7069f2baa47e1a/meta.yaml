@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/75bb6fd5d95f4cd09d7069f2baa47e1a/artifacts
+end_time: 1698366474906
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 75bb6fd5d95f4cd09d7069f2baa47e1a
+run_name: monumental-tern-177
+run_uuid: 75bb6fd5d95f4cd09d7069f2baa47e1a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698366474209
+status: 3
+tags: []
+user_id: Medhat

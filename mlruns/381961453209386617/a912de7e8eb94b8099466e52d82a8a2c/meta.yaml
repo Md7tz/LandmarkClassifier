@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/a912de7e8eb94b8099466e52d82a8a2c/artifacts
+end_time: 1698363929356
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: a912de7e8eb94b8099466e52d82a8a2c
+run_name: victorious-sheep-867
+run_uuid: a912de7e8eb94b8099466e52d82a8a2c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698363928704
+status: 3
+tags: []
+user_id: Medhat

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/593ca1b70bc74e7f86840a1d6b1e68a5/artifacts
+end_time: 1698362882497
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 593ca1b70bc74e7f86840a1d6b1e68a5
+run_name: inquisitive-hawk-178
+run_uuid: 593ca1b70bc74e7f86840a1d6b1e68a5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698362872762
+status: 3
+tags: []
+user_id: Medhat

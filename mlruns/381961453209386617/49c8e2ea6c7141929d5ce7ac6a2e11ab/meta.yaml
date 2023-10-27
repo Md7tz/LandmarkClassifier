@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/49c8e2ea6c7141929d5ce7ac6a2e11ab/artifacts
+end_time: 1698366141295
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 49c8e2ea6c7141929d5ce7ac6a2e11ab
+run_name: nebulous-bat-88
+run_uuid: 49c8e2ea6c7141929d5ce7ac6a2e11ab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698366131499
+status: 3
+tags: []
+user_id: Medhat

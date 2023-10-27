@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/45c72ef0dbf44ad6847afe242dc4ba49/artifacts
+end_time: 1698361921402
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 45c72ef0dbf44ad6847afe242dc4ba49
+run_name: honorable-asp-196
+run_uuid: 45c72ef0dbf44ad6847afe242dc4ba49
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698361911973
+status: 3
+tags: []
+user_id: Medhat

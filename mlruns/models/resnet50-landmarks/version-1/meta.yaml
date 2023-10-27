@@ -1,0 +1,13 @@
+aliases: []
+creation_timestamp: 1698389468861
+current_stage: None
+description: ''
+last_updated_timestamp: 1698389468861
+name: resnet50-landmarks
+run_id: 58098225c94840ceb7f1fcc460256ce4
+run_link: ''
+source: mlflow-artifacts:/381961453209386617/58098225c94840ceb7f1fcc460256ce4/artifacts/model
+status: READY
+status_message: null
+user_id: null
+version: 1

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/8df25612a1144ea99b4ce56246d97475/artifacts
+end_time: 1698363704205
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 8df25612a1144ea99b4ce56246d97475
+run_name: enchanting-dog-273
+run_uuid: 8df25612a1144ea99b4ce56246d97475
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698363694178
+status: 3
+tags: []
+user_id: Medhat

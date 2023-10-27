@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/58098225c94840ceb7f1fcc460256ce4/artifacts
+end_time: 1698366926263
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 58098225c94840ceb7f1fcc460256ce4
+run_name: bald-swan-791
+run_uuid: 58098225c94840ceb7f1fcc460256ce4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698366916444
+status: 3
+tags: []
+user_id: Medhat

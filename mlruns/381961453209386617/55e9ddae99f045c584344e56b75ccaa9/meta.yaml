@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/55e9ddae99f045c584344e56b75ccaa9/artifacts
+end_time: 1698363356992
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 55e9ddae99f045c584344e56b75ccaa9
+run_name: amazing-bee-878
+run_uuid: 55e9ddae99f045c584344e56b75ccaa9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698363347736
+status: 3
+tags: []
+user_id: Medhat

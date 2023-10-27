@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/7a146a59512142bbb64cd11169497de8/artifacts
+end_time: 1698365702913
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 7a146a59512142bbb64cd11169497de8
+run_name: chill-lamb-190
+run_uuid: 7a146a59512142bbb64cd11169497de8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698365692647
+status: 3
+tags: []
+user_id: Medhat

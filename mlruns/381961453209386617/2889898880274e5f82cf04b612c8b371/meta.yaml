@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/2889898880274e5f82cf04b612c8b371/artifacts
+end_time: 1698362410755
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 2889898880274e5f82cf04b612c8b371
+run_name: skillful-ray-629
+run_uuid: 2889898880274e5f82cf04b612c8b371
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698362401400
+status: 3
+tags: []
+user_id: Medhat

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/34108c20435f44248d3fadab504395ea/artifacts
+end_time: 1698367035624
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 34108c20435f44248d3fadab504395ea
+run_name: incongruous-doe-300
+run_uuid: 34108c20435f44248d3fadab504395ea
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698367034943
+status: 3
+tags: []
+user_id: Medhat

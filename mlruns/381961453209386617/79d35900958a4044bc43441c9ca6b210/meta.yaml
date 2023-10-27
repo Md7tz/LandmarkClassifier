@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/79d35900958a4044bc43441c9ca6b210/artifacts
+end_time: 1698364151328
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 79d35900958a4044bc43441c9ca6b210
+run_name: classy-stag-863
+run_uuid: 79d35900958a4044bc43441c9ca6b210
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698364150648
+status: 3
+tags: []
+user_id: Medhat

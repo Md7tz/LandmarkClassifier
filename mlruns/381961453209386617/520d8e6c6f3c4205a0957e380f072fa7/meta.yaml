@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/520d8e6c6f3c4205a0957e380f072fa7/artifacts
+end_time: 1698366248678
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 520d8e6c6f3c4205a0957e380f072fa7
+run_name: luminous-lynx-403
+run_uuid: 520d8e6c6f3c4205a0957e380f072fa7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698366248011
+status: 3
+tags: []
+user_id: Medhat

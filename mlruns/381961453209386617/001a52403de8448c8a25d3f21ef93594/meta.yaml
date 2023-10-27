@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/001a52403de8448c8a25d3f21ef93594/artifacts
+end_time: 1698361801829
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 001a52403de8448c8a25d3f21ef93594
+run_name: bittersweet-auk-92
+run_uuid: 001a52403de8448c8a25d3f21ef93594
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698361792230
+status: 3
+tags: []
+user_id: Medhat

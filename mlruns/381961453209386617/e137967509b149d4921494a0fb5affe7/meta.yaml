@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/e137967509b149d4921494a0fb5affe7/artifacts
+end_time: 1698365918029
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: e137967509b149d4921494a0fb5affe7
+run_name: placid-rook-918
+run_uuid: e137967509b149d4921494a0fb5affe7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698365917313
+status: 3
+tags: []
+user_id: Medhat

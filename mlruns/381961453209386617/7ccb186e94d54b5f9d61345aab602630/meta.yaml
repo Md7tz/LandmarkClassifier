@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/7ccb186e94d54b5f9d61345aab602630/artifacts
+end_time: 1698362169211
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 7ccb186e94d54b5f9d61345aab602630
+run_name: delightful-duck-363
+run_uuid: 7ccb186e94d54b5f9d61345aab602630
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698362159274
+status: 3
+tags: []
+user_id: Medhat

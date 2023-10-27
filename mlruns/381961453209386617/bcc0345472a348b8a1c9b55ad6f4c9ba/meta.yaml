@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/bcc0345472a348b8a1c9b55ad6f4c9ba/artifacts
+end_time: 1698363240137
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: bcc0345472a348b8a1c9b55ad6f4c9ba
+run_name: entertaining-cat-478
+run_uuid: bcc0345472a348b8a1c9b55ad6f4c9ba
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698363229969
+status: 3
+tags: []
+user_id: Medhat

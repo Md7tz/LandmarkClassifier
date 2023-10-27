@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/d1215482f9984a8bb8186de1a4ee53ca/artifacts
+end_time: 1698364935713
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: d1215482f9984a8bb8186de1a4ee53ca
+run_name: nosy-ram-428
+run_uuid: d1215482f9984a8bb8186de1a4ee53ca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698364926270
+status: 3
+tags: []
+user_id: Medhat

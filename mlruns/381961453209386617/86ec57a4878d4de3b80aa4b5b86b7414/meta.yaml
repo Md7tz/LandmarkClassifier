@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/381961453209386617/86ec57a4878d4de3b80aa4b5b86b7414/artifacts
+end_time: 1698364702350
+entry_point_name: ''
+experiment_id: '381961453209386617'
+lifecycle_stage: active
+run_id: 86ec57a4878d4de3b80aa4b5b86b7414
+run_name: redolent-gnu-417
+run_uuid: 86ec57a4878d4de3b80aa4b5b86b7414
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1698364701672
+status: 3
+tags: []
+user_id: Medhat
