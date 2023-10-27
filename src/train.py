@@ -102,6 +102,7 @@ def optimize(
     n_epochs: int,
     save_path: str,
     interactive_tracking: bool = False,
+    experiment_name: None or str = None,
 ):
     if interactive_tracking:
         liveloss = PlotLosses(outputs=[MatplotlibPlot(after_subplot=after_subplot)])
@@ -120,54 +121,71 @@ def optimize(
         optimizer=optimizer, mode="min"
     )
 
-    # mlflow.set_tracking_uri("http://localhost:5000")
+    # Set the experiment name
+    if experiment_name is None:
+        experiment_name = f"training - {model.__class__.__name__}"
+
+    mlflow.set_tracking_uri("http://localhost:5000")
+    mlflow.set_experiment(experiment_name)
+
     for epoch in range(1, n_epochs + 1):
         train_loss = train_one_epoch(data_loaders["train"], model, optimizer, loss)
         valid_loss = valid_one_epoch(data_loaders["valid"], model, loss)
 
-        # with mlflow.start_run():
-        # # Log the current epoch as a parameter
-        # mlflow.log_param("epoch", epoch)
-        # # batch size
-        # mlflow.log_param("batch_size", data_loaders["train"].batch_size)
-        # # optimizer name sgd/adam
-        # mlflow.log_param("optimizer", optimizer.__class__.__name__)
-        # # loss function name
-        # mlflow.log_param("loss_function", loss.__class__.__name__)
-
-        # # Log training and validation loss as metrics
-        # mlflow.log_metric("train_loss", train_loss)
-        # mlflow.log_metric("valid_loss", valid_loss)
-        # mlflow.log_metric("lr", optimizer.param_groups[0]["lr"])
-        # mlflow.log_metric("weight_decay", optimizer.param_groups[0]["weight_decay"])
-
-        # Print training/validation statistics
-        print(
-            "Epoch: {} \tTraining Loss: {:.6f} \tValidation Loss: {:.6f}".format(
-                epoch, train_loss, valid_loss
+        with mlflow.start_run():
+            # log all params at once
+            mlflow.log_params(
+                {
+                    "epoch": epoch,
+                    "batch_size": data_loaders["train"].batch_size,
+                    "optimizer": optimizer.__class__.__name__,
+                    "loss_function": loss.__class__.__name__,
+                }
             )
-        )
+            # log all metrics at once
+            mlflow.log_metrics(
+                {
+                    "train_loss": train_loss,
+                    "valid_loss": valid_loss,
+                    "lr": optimizer.param_groups[0]["lr"],
+                    "weight_decay": optimizer.param_groups[0]["weight_decay"],
+                    **(
+                        {
+                            "momentum": optimizer.param_groups[0]["momentum"],
+                        }
+                        if "momentum" in optimizer.param_groups[0]
+                        else {}
+                    ),
+                }
+            )
 
-        # if validation loss has decreased by 1% or more, save the model
-        if valid_loss_min is None or valid_loss < valid_loss_min * 0.99:
-            torch.save(model.state_dict(), save_path)
-            valid_loss_min = valid_loss
+            # Print training/validation statistics
             print(
-                f"Validation loss decreased ({valid_loss_min:.6f} --> {valid_loss:.6f}).  Saving model ..."
+                "Epoch: {} \tTraining Loss: {:.6f} \tValidation Loss: {:.6f}".format(
+                    epoch, train_loss, valid_loss
+                )
             )
-            # mlflow.pytorch.log_model(model, "model")
 
-        # Update learning rate, i.e. reduce it if validation loss has not improved
-        scheduler.step(valid_loss)
+            # if validation loss has decreased by 1% or more, save the model
+            if valid_loss_min is None or valid_loss < valid_loss_min * 0.99:
+                torch.save(model.state_dict(), save_path)
+                valid_loss_min = valid_loss
+                print(
+                    f"Validation loss decreased ({valid_loss_min:.6f} --> {valid_loss:.6f}).  Saving model ..."
+                )
+                mlflow.pytorch.log_model(model, "model")
 
-        # Log the losses and the current learning rate
-        if interactive_tracking:
-            logs["loss"] = train_loss
-            logs["val_loss"] = valid_loss
-            logs["lr"] = optimizer.param_groups[0]["lr"]
+            # Update learning rate, i.e. reduce it if validation loss has not improved
+            scheduler.step(valid_loss)
 
-            liveloss.update(logs)
-            liveloss.send()
+            # Log the losses and the current learning rate
+            if interactive_tracking:
+                logs["loss"] = train_loss
+                logs["val_loss"] = valid_loss
+                logs["lr"] = optimizer.param_groups[0]["lr"]
+
+                liveloss.update(logs)
+                liveloss.send()
 
 
 def one_epoch_test(test_data_loader, model: nn.Module, loss) -> float:
