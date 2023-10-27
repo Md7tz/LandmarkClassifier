@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 import torchvision.transforms as T
 from torch.nn import functional as F
+from torch.utils.data import DataLoader
 from tqdm import tqdm
 from torchvision.datasets import ImageFolder
 from .helpers import get_data_location
@@ -43,7 +44,7 @@ class Predictor(nn.Module):
             return probabilities
 
 
-def predictor_test(test_dataloader, model_reloaded):
+def predictor_test(test_dataloader: DataLoader, model_reloaded):
     """
     Test the predictor. Since the predictor does not operate on the same tensors
     as the non-wrapped model, we need a specific test function (can't use one_epoch_test)
